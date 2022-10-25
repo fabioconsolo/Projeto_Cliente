@@ -1,56 +1,54 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Client {
+
+	private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
 	private String name;
 	private String email;
-	private Date birthdate;
+	private Date birthDate;
 
-public Client() {
-	
-}
+	public Client() {
+	}
 
+	public Client(String name, String email, Date birthDate) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.birthDate = birthDate;
+	}
 
+	public String getName() {
+		return name;
+	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
 
-public Client(String name, String email, Date birthdate) {
-	super();
-	this.name = name;
-	this.email = email;
-	this.birthdate = birthdate;
-}
+	public String getEmail() {
+		return email;
+	}
 
-public String getName() {
-	return name;
-}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-public void setName(String name) {
-	this.name = name;
-}
+	public Date getBirthDate() {
+		return birthDate;
+	}
 
-public String getEmail() {
-	return email;
-}
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
 
-public void setEmail(String email) {
-	this.email = email;
-}
-
-public Date getBirthdate() {
-	return birthdate;
-}
-
-public void setBirthdate(Date birthdate) {
-	this.birthdate = birthdate;
-}
-public String toString(){
-	StringBuilder sb = new StringBuilder();
-	
-	sb.append(name+"\n");
-	sb.append(email+"\n");
-	sb.append(birthdate+"\n");
-	return sb.toString();
+public String toString() {
+	return "Name:"+ name +"\n" +
+"Birth Date: " +sdf.format(birthDate)+"\n"
+			+"e-mail: "+ email;
 }
 
 }
